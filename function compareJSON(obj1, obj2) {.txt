@@ -1,0 +1,19 @@
+function compareJSON(obj1, obj2) {
+    // Convert JSON objects to strings and sort them
+    const sortedJSON1 = JSON.stringify(obj1, Object.keys(obj1).sort());
+    const sortedJSON2 = JSON.stringify(obj2, Object.keys(obj2).sort());
+
+    // Compare the sorted strings
+    return sortedJSON1 === sortedJSON2;
+}
+
+const obj1 = { name: "person11", age: 5 };
+const obj2 = { age: 5, name: "person1" };
+
+const result = compareJSON(obj1, obj2);
+
+if (result) {
+    console.log("The JSON objects are equal.");
+} else {
+    console.log("The JSON objects are not equal.");
+}
